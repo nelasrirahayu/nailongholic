@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran - NAILONGHOLIC.ID</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-2xl mx-auto p-6">
+    <div class="bg-white rounded-3xl shadow-xl p-8">
+      <h1 class="text-2xl font-bold text-center mb-8">Pilih Metode Pembayaran</h1>
+
+      <div class="space-y-4">
+        <!-- Virtual Account -->
+        <div onclick="selectMethod('va')" class="border-2 border-transparent hover:border-yellow-500 p-5 rounded-2xl cursor-pointer flex items-center gap-4">
+          <i class="fa-solid fa-building-columns text-3xl text-yellow-500"></i>
+          <div>
+            <p class="font-semibold">Transfer Virtual Account (BCA, BNI, Mandiri)</p>
+            <p class="text-sm text-gray-500">Nomor VA unik akan diberikan setelah konfirmasi</p>
+          </div>
+        </div>
+
+        <!-- E-Wallet -->
+        <div onclick="selectMethod('ewallet')" class="border-2 border-transparent hover:border-yellow-500 p-5 rounded-2xl cursor-pointer flex items-center gap-4">
+          <i class="fa-solid fa-wallet text-3xl text-yellow-500"></i>
+          <div>
+            <p class="font-semibold">E-Wallet (GoPay, OVO, Dana, ShopeePay)</p>
+            <p class="text-sm text-gray-500">Pembayaran instan</p>
+          </div>
+        </div>
+
+        <!-- Kartu Kredit -->
+        <div onclick="selectMethod('card')" class="border-2 border-transparent hover:border-yellow-500 p-5 rounded-2xl cursor-pointer flex items-center gap-4">
+          <i class="fa-solid fa-credit-card text-3xl text-yellow-600"></i>
+          <div>
+            <p class="font-semibold">Kartu Kredit/Debit</p>
+            <p class="text-sm text-gray-500">Visa, Mastercard, dll</p>
+          </div>
+        </div>
+
+        <div onclick="selectMethod('qris')" class="border-2 border-transparent hover:border-yellow-500 p-5 rounded-2xl cursor-pointer flex items-center gap-4">
+  <i class="fa-solid fa-qrcode text-3xl text-yellow-500"></i>
+  <div>
+    <p class="font-semibold">QRIS</p>
+    <p class="text-sm text-gray-500">Scan QR menggunakan aplikasi pembayaran.</p>
+  </div>
+</div>
+
+<div onclick="selectMethod('cod')" class="border-2 border-transparent hover:border-yellow-500 p-5 rounded-2xl cursor-pointer flex items-center gap-4">
+  <i class="fa-solid fa-truck text-3xl text-yellow-500"></i>
+  <div>
+    <p class="font-semibold">COD (Bayar di Tempat)</p>
+    <p class="text-sm text-gray-500">Bayar saat pesanan diterima.</p>
+  </div>
+</div>
+      </div>
+
+      <button onclick="processPayment()" 
+              class="mt-10 w-full bg-yellow-500 hover:bg-yellow-700 text-white py-5 rounded-3xl text-xl font-bold">
+        Bayar Sekarang - Rp 85.000
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let selectedMethod = '';
+
+    function selectMethod(method) {
+      selectedMethod = method;
+      alert(`Metode pembayaran dipilih: ${method.toUpperCase()}`);
+    }
+
+    function processPayment() {
+      if (!selectedMethod) {
+        alert("Silakan pilih metode pembayaran terlebih dahulu");
+        return;
+      }
+      window.location.href = 'success.html';
+    }
+  </script>
+</body>
+</html>

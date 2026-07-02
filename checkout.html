@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - <NAILONGHOLIC class="ID"></NAILONGHOLIC></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-8">Checkout <nailongholic class="id"></nailongholic></h1>
+
+    <div class="grid md:grid-cols-5 gap-8">
+      <!-- Form Alamat -->
+      <div class="md:col-span-3 bg-white p-8 rounded-3xl">
+        <h2 class="text-xl font-semibold mb-4">Alamat Pengiriman</h2>
+        <input type="text" placeholder="Nama Lengkap" class="w-full p-4 border rounded-2xl mb-4">
+        <input type="text" placeholder="Alamat Lengkap" class="w-full p-4 border rounded-2xl mb-4">
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" placeholder="Kota" class="w-full p-4 border rounded-2xl">
+          <input type="text" placeholder="Kode Pos" class="w-full p-4 border rounded-2xl">
+          <input type="text" placeholder="Nomor HP" class="w-full p-4 border rounded-2xl mt-4">
+          <textarea placeholder="Catatan untuk penjual" class="w-full p-4 border rounded-2xl mt-4"></textarea>
+        </div>
+      </div>
+
+      <!-- Ringkasan & Metode Pembayaran -->
+      <div class="md:col-span-2">
+        <div class="bg-white p-6 rounded-3xl mb-6">
+  <h3 class="font-semibold mb-4">Ringkasan Pembayaran</h3>
+
+  <div class="flex justify-between mb-2">
+    <span>Subtotal</span>
+    <span>Rp75.000</span>
+  </div>
+
+  <div class="flex justify-between mb-2">
+    <span>Ongkos Kirim</span>
+    <span>Rp10.000</span>
+  </div>
+
+  <hr class="my-3">
+
+  <div class="flex justify-between font-bold text-xl">
+    <span>Total</span>
+    <span>Rp85.000</span>
+  </div>
+</div>
+
+        <button onclick="goToPayment()" 
+                class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 rounded-3xl text-xl font-semibold">
+          Pilih Metode Pembayaran
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goToPayment() {
+      window.location.href = 'payment.html';
+    }
+  </script>
+</body>
+</html>
